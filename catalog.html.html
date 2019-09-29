@@ -3,23 +3,26 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Барбершоп</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sana+Narrow:400,700&amp;subset=latin,cyrillic" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
   </head>
-  <body class="iner-page">
-<header>
-  <nav>
-    <a href="index.html">
+  <body>
+<header class="main-header">
+  <nav class="main-mavigation">
+    <a class="main-header-logo" href="index.html">
       <img src="img/logo.svg" width="111" height="24" alt="Логотип Бородинского">
     </a>
-    <ul>
+    <ul class="site-navigation">
       <li><a href="info.html">Информация </a> </li>
       <li><a href="news.html">Новости</a> </li>
       <li><a href="Price.html">Прайс-лист</a> </li>
-      <li><a href="catalog.html">Магазин</a></li>
+      <li class="site-navigation-current"><a href="catalog.html">Магазин</a></li>
       <li><a href="contacts.html">Контакты</a></li>
     </ul>
-    <ul>
+    <ul class="user-navigation">
       <li>
-        <button type="button">Вход</button>
+        <a class="login-link" href="login.html">Вход</a>
       </li>
     </ul>
   </nav>
@@ -27,11 +30,11 @@
   <main class="container">
     <h1 class="page-title">Средства для ухода</h1>
     <ul class="breadcrumbs">
-      <li><a href="index.html">Главная</a>a></li>
-      <li><a href="catalog.html">Магазин</a>a></li>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="catalog.html">Магазин</a></li>
       <li class="breadcrumbs-current"><a>Средства для ухода</a>a></li>
     </ul>
-    <section class="filtres">
+    <section class="filters">
       <h2 class="visually-hidden">Фильтр товаров</h2>
       <form class="filter" method="get" action="https://echo.htmlacademy.ru">
         <fieldset>
@@ -188,52 +191,55 @@
           </p>
         </li>
       </ul>
-      <ul>
-        <li><a href="#">1</a></li>
-        <li>2</li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
+      <ul class="pagination-list">
+        <li class="pagination-item"><a href="#">1</a></li>
+        <li class="pagination-item pagination-item-current">2</li>
+        <li class="pagination-item"><a href="#">3</a></li>
+        <li class="pagination-item"><a href="#">4</a></li>
       </ul>
     </section>
   </main>
-  <footer>
-    <p>
+  <footer class="main-footer">
+    <p class="footer-contacts">
       Барбершоп "Бородинский"<br>
       Адрес: г.Анкт-Петербург, ул.Б.Конюшенная, д. 19/8<br>
-      <u>
+      <a href="map.html">
         как нас найти?<br>
-      </u>
+      </a>
       Телефон: +7(495)666-02-66
     </p>
-    <ul>
-      <p>
+    <div class="footer-social">
+      <b>
         Давайте дружить!
-      </p>
-      <li><a href="/"><img src="img/vk.svg"></a></li>
-      <li><a href="/"><img src="img/facebook.svg"></a></li>
-      <li><a href="/"><img src="img/instagram.svg"></a></li>
+      </b>
+    <ul>
+      <li><a class="social-button" href="#"><img src="img/vk.svg"></a></li>
+      <li><a  class="social-button" href="#"><img src="img/facebook.svg"></a></li>
+      <li><a class="social-button" href="#"><img src="img/instagram.svg"></a></li>
     </ul>
+    </div>
     <p>
-      Разработанно:
+    <b>Разработанно:<a class="buttom" href="https://htmlacademy.ru">HTML Academy</a></b>
     </p>
-    <a href="https://htmlacademy">HTML ACADEMY</a>
   </footer>
-<section>
+<section class="mobal mobal-login">
   <h2>Личный кабинет</h2>
   <p>Введите свой логин и пароль</p>
   <form class="login-form" action="https://echo.htmlacademy.ru" method="post">
     <p>
-      <label class="visually-hidden" for="login-user">Логин</label>
-      <input  id="login-user" class="login-user" type="text" name="login" placeholder="Логин">
+      <label class="visually-hidden" for="user-login">Логин</label>
+      <input  id="user-login" class="login-icon-user" type="text" name="login" placeholder="Логин">
     </p>
     <p>
-      <label class="visually-hidden" for="login-password">Пароль</label>
-      <input  id="login-password" class="login-password" type="password" name="password" placeholder="Пароль">
+      <label class="visually-hidden" for="user-password">Пароль</label>
+      <input  id="user-password" class="login-icon-password" type="password" name="password" placeholder="********">
     </p>
     <p class="login-password-info">
-      <label for="login-password-info">Запомните меня</label>
-      <input  id="login-password-info" class="checkbox" name="remember">
-      Запомните меня
+      <label class="login-checkbox">
+        <input type="checkbox" name="remember" class="visually-hidden">
+        <span class="checkbox-indicator"></span>
+        Запомните меня
+      </label>
       <a class="restore" href="#">Я забыл пароль!</a>
     </p>
     <button type="submit" class="buttom">
@@ -243,13 +249,6 @@
   <button class="mobal-close" type="button">
     Закрыть
   </button>
-</section>
-<section class="mobal mobal-map">
-  <h2 class="visually-hidden">как до нас добраться</h2>
-  <p>
-    <img src="img/map.jpg" width="786" height="548" alt="Офис компании по адресу г.Санкт-Петербург, б.Конюшенная, д. 19/8">
-  </p>
-  <button class="mobal-close" type="button">Закрыть</button>
 </section>
      </body>
 </html>
